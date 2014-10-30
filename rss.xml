@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>6109</title><link>http://6109.thegovlab.org/</link><description>GovLab 6109</description><language>en</language><lastBuildDate>Thu, 30 Oct 2014 14:50:45 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Static Site Comparison: Nikola vs Pelican</title><link>http://6109.thegovlab.org/posts/static-site-comparison-nikola-vs-pelican.html</link><dc:creator>GovLab Geeks</dc:creator><description>&lt;div&gt;&lt;h3&gt;GovLab Static Python Static Site Generator Smackkdown&lt;/h3&gt;
+&lt;p&gt;In the red corner: &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the blue corner: &lt;a href="http://www.getnikola.com"&gt;Nikola&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here's a list of their shared attractive attributes, which is why they were put
+in competition:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Posts can be written in Markdown&lt;/li&gt;
+&lt;li&gt;Templates and pages can be edited in Jinja2&lt;/li&gt;
+&lt;li&gt;Tags are supported&lt;/li&gt;
+&lt;li&gt;Written in Python&lt;/li&gt;
+&lt;li&gt;Supports easy deploy to GitHub.&lt;/li&gt;
+&lt;li&gt;Actively being developed by numerous developers, FOSS to boot&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;So... the comparison!&lt;/p&gt;
+&lt;h4&gt;Installation&lt;/h4&gt;
+&lt;p&gt;Both support an easy install process using &lt;code&gt;pip install&lt;/code&gt;, but default to
+ReStructured Text, so Markdown has to be installed separately.&lt;/p&gt;
+&lt;p&gt;So for Pelican:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install pelican markdown&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Make sure to enter &lt;code&gt;y&lt;/code&gt; when asked &lt;code&gt;&amp;gt; Do you want to upload your website using
+GitHub Pages? (y/N)&lt;/code&gt;, as it defaults to &lt;code&gt;N&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And Nikola:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install nikola markdown&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Of course, this working depends on a functional Python/distribute environment
+on the client's computer, which can be a headache.  Also, &lt;code&gt;virtualenv&lt;/code&gt; is
+recommended so you don't pollute your system Python.  But those are more
+criticisms of Python and its ecosystem than these site generators -- and it's
+not like the situation is any better in Rubyland (&lt;code&gt;rvm&lt;/code&gt;, anyone?)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Victor&lt;/strong&gt;: everybody wins!  But Pelican does a little bit more, since &lt;a href="http://docs.getpelican.com/en/3.4.0/quickstart.html#installation"&gt;their
+docs&lt;/a&gt; mention installing markdown from the start.&lt;/p&gt;
+&lt;h4&gt;Generating a site skeleton&lt;/h4&gt;
+&lt;p&gt;Both have tools to generate a barebones site to work from quickly.  Pelican has
+a special-purpose commandline tool for this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pelican-quickstart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;While Nikola has a single command line tool, which supervises numerous commands
+including site generation:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nikola init&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Both tools allow you to specify a target directory, and ask a series of basic
+questions (what's the name of the blog?  Who is the author?) to populate the
+initial configuration.&lt;/p&gt;
+&lt;p&gt;Nikola's design is simpler and clearer here.  If you naïvely execute &lt;code&gt;pelican&lt;/code&gt;
+instead of &lt;code&gt;pelican-quickstart&lt;/code&gt;, Pelican will assume you want to regenerate
+your current folder and create a bunch of junk (whether or not there's
+a pelican project there.  Its error messages don't suggest you need to run
+&lt;code&gt;pelican-quickstart&lt;/code&gt;; you have to look at docs online to find that out.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican
+WARNING: Feeds generated without SITEURL &lt;span class="nb"&gt;set &lt;/span&gt;properly may not be valid
+WARNING: No timezone information specified in the settings. Assuming your
+timezone is UTC &lt;span class="k"&gt;for&lt;/span&gt; feed generation. Check
+http://docs.getpelican.com/en/latest/settings.html#timezone &lt;span class="k"&gt;for&lt;/span&gt; more
+information
+ERROR: Skipping posts/data-ruled-irrelevant.rst: could not find information
+about &lt;span class="s1"&gt;'date'&lt;/span&gt;
+Done: Processed &lt;span class="m"&gt;0&lt;/span&gt; article&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="m"&gt;0&lt;/span&gt; draft&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt; and &lt;span class="m"&gt;0&lt;/span&gt; page&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt; in 0.19 seconds.
+&lt;/pre&gt;
+
+
+&lt;p&gt;With Nikola, simply executing &lt;code&gt;nikola&lt;/code&gt; will give you a helpful listing of the
+possible commands, including the relevant &lt;code&gt;init&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;nikola
+&lt;span class="o"&gt;[&lt;/span&gt;2014-10-29T21:13:38Z&lt;span class="o"&gt;]&lt;/span&gt; WARNING: Nikola: In order to USE_BUNDLES, you must
+install the &lt;span class="s2"&gt;"webassets"&lt;/span&gt; Python package.
+&lt;span class="o"&gt;[&lt;/span&gt;2014-10-29T21:13:38Z&lt;span class="o"&gt;]&lt;/span&gt; WARNING: Nikola: Setting USE_BUNDLES to False.
+Nikola is a tool to create static websites and blogs. For full documentation
+and more information, please visit http://getnikola.com/
+
+
+Available commands:
+  nikola auto                 automatically detect site changes, rebuild and
+optionally refresh a browser
+  nikola bootswatch_theme     given a swatch name from bootswatch.com and
+a parent theme, creates a custom theme
+  nikola build                run tasks
+...
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Victor&lt;/strong&gt;: Nikola, for elegance.&lt;/p&gt;
+&lt;h4&gt;Creating your first blog post&lt;/h4&gt;
+&lt;p&gt;All new posts follow roughly the same format in Pelican.  According to the
+&lt;a href="http://docs.getpelican.com/en/3.4.0/quickstart.html#installation"&gt;quickstart guide&lt;/a&gt; this means duplicating a template post of this format:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;Title: (title)
+Date: (date)
+Category: (list of categories)
+
+(Content goes here.)
+&lt;/pre&gt;
+
+
+&lt;p&gt;And placing it, with a &lt;code&gt;.md&lt;/code&gt; extension (if you're using Markdown,) in the
+pregenerated &lt;code&gt;content&lt;/code&gt; folder.  If you do this yourself, make sure to write the
+date the way Pelican expects!  If you write, say &lt;code&gt;10/11/2012 10:20&lt;/code&gt; or
+&lt;code&gt;2012/10/11 10:20&lt;/code&gt; instead of &lt;code&gt;2012-10-11 10:20&lt;/code&gt;, Pelican will complain with
+the almost-helpful:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ERROR: Skipping ./blogpost.md: could not find information about 'date'&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It would be nice if it specified how to properly write a date -- otherwise
+you'll probably find yourself referring to prior posts or the documentation.&lt;/p&gt;
+&lt;p&gt;It's also worth noting that if you forget to install &lt;code&gt;markdown&lt;/code&gt; via pip when
+you install Pelican, it will simply mysteriously ignore your Markdown posts.
+Annoying!&lt;/p&gt;
+&lt;p&gt;Nikola's CLI provides a utility for creating new posts.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nikola new_post&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will prompt you for title, etc.  It auto-generates the date, which is
+actually quite convenient.&lt;/p&gt;
+&lt;p&gt;On the other hand, it assumes you want to use ReStructured Text, and you will
+need to use a special switch to use Markdown instead.  Unfortunately, the naive&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nikola new_post -f markdown&lt;/code&gt; will spit out the error message:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;Exception&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Can&lt;/span&gt;&lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;find&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;way&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;configuration&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;You&lt;/span&gt; &lt;span class="n"&gt;may&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;tweak&lt;/span&gt; &lt;span class="n"&gt;COMPILERS&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;py&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The trick is to edit &lt;code&gt;conf.py&lt;/code&gt; to insert a line translating &lt;code&gt;.md&lt;/code&gt; formats for
+both &lt;code&gt;POSTS&lt;/code&gt; and &lt;code&gt;PAGES&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;POSTS = (
+    ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.md", "posts", "post.tmpl"),
+)
+PAGES = (
+    ("stories/*.rst", "stories", "story.tmpl"),
+    ("stories/*.txt", "stories", "story.tmpl"),
+    ("stories/*.md", "stories", "story.tmpl"),
+)
+&lt;/pre&gt;
+
+
+&lt;p&gt;It would've been nice if this was in the config, perhaps commented out since
+markdown isn't bundled in the package.&lt;/p&gt;
+&lt;p&gt;PS: Make sure you installed the Markdown module via &lt;code&gt;pip&lt;/code&gt;!  If you didn't, you
+still can:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install markdown&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Victor&lt;/em&gt;: Nikola, since it provides a nice utility that auto-generates your
+dates.  Really, this is surprisingly annoying to do manually.  While I wasn't
+a fan of the extra setup to get Nikola recognizing Markdown, at least it goes
+out of its way to complain when it doesn't recognize content in your content
+folder -- I really don't like it when something fails silently!&lt;/p&gt;
+&lt;h3&gt;Generating the blog&lt;/h3&gt;
+&lt;p&gt;Static sites need to be "generated", or transformed from the source Markdown
+and Jinja2 templates in their own folders to a folder of HTML output in the
+same organization as the URL scheme of your site.&lt;/p&gt;
+&lt;p&gt;In Pelican, this is done through the &lt;code&gt;pelican&lt;/code&gt; command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pelican&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;By default, this will look for articles in the folder called &lt;code&gt;content&lt;/code&gt;
+(generated by &lt;code&gt;pelican-quickstart&lt;/code&gt;).  Output goes in the &lt;code&gt;output&lt;/code&gt; folder,
+which can be customized with the &lt;code&gt;-o&lt;/code&gt; flag.  Additional flags allow you to
+customize the theme and location of the configuration file.&lt;/p&gt;
+&lt;p&gt;Nikola has a similar &lt;code&gt;build&lt;/code&gt; command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nikola build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This doesn't appear to let you customize the location of input and output, but
+if you're using the skeleton setup Nikola provides, this shouldn't be a big
+deal.  It also lets you run the build in several processes, and won't re-run it
+if nothing has changed since the last run.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Victor&lt;/strong&gt;: Kind of a tossup.  Nothing decisively superior about either.&lt;/p&gt;
+&lt;h4&gt;Previewing your blog locally&lt;/h4&gt;
+&lt;p&gt;Static sites are super-easy to preview, since the server doesn't have to
+execute any site-specific code or connect to a database.&lt;/p&gt;
+&lt;p&gt;Pelican takes advantage of this simplicity and tells its users to utilize
+Python's built in &lt;code&gt;SimpleHTTPServer&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python -m SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;However, by default &lt;code&gt;pelican-quickstart&lt;/code&gt; also creates a Makefile, that can be
+used for convenience:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;make serve&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Nikola makes things a little easier to remember by building that into its CLI,
+although it &lt;a href="https://github.com/getnikola/nikola/blob/62fa7db704d8a4f5a5046668b4211dfd1eb231b8/nikola/plugins/command/serve.py#L84"&gt;maps to something similar&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nikola serve&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This allows for a little extra documentation (if you look at &lt;code&gt;nikola serve -h&lt;/code&gt;)
+about features like switching the port, in case you've got a different service already running on 8000.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Victor&lt;/strong&gt;: Nikola, for superior documentation.&lt;/p&gt;
+&lt;h4&gt;Deploying to a GitHub&lt;/h4&gt;
+&lt;p&gt;GitHub pages is a cheap, reliable way to host a static site.&lt;/p&gt;
+&lt;p&gt;For Pelican GH Pages was one of the options for deploying offered at the end of
+&lt;code&gt;pelican-quickstart&lt;/code&gt;.  Hopefully you said &lt;code&gt;y&lt;/code&gt; then!&lt;/p&gt;
+&lt;p&gt;If you naïvely try&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;make github&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;you'll get a helpful error:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;make: ghp-import: No such file or directory&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Indeed, we need &lt;code&gt;ghp-import&lt;/code&gt;, which is a very useful tool that can be installed
+from pip:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install ghp-import&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After installing &lt;code&gt;ghp-import&lt;/code&gt;, &lt;code&gt;make github&lt;/code&gt; works great.&lt;/p&gt;
+&lt;p&gt;Nikola has a builtin command for deploying to github, &lt;code&gt;nikola github_deploy&lt;/code&gt;.
+Unfortunately, it has a serious [bug][] at the moment, and won't work unless
+you've already created a blank &lt;code&gt;gh-pages&lt;/code&gt; branch and pushed it to GitHub.&lt;/p&gt;
+&lt;p&gt;This means you have to do this yourself, which can be dangerous -- make sure
+you've committed everything on &lt;code&gt;master&lt;/code&gt; and no untracked files are hanging out
+before doing this!&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;git checkout --orphan gh-pages
+git rm -rf .
+git commit --allow-empty -m 'first commit'
+git push origin gh-pages:gh-pages
+git checkout master
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now, &lt;code&gt;nikola github_deploy&lt;/code&gt; should work as expected.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Victor&lt;/strong&gt;: Pelican.  It would've been great if Nikola's feature worked as
+expected, and hopefully they'll fix it soon.&lt;/p&gt;
+&lt;h3&gt;The ultimate victor?&lt;/h3&gt;
+&lt;p&gt;Nikola and Pelican offer nearly identical feature sets.  Nikola's built in
+CLI is nearly self-documenting; I found navigating it much more intuitive than
+browsing the Pelican docs and Makefile.  Being able to create a post skeleton
+is, shockingly, a killer feature.  I also found far more intuitive error
+messages in Nikola.  The broken &lt;code&gt;github_deploy&lt;/code&gt; is a major problem, but only
+needs to be addressed once when you set up a site.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.getnikola.com"&gt;Nikola&lt;/a&gt;!&lt;/p&gt;&lt;/div&gt;</description><guid>http://6109.thegovlab.org/posts/static-site-comparison-nikola-vs-pelican.html</guid><pubDate>Thu, 30 Oct 2014 18:47:05 GMT</pubDate></item></channel></rss>
