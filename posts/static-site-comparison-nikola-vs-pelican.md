@@ -239,7 +239,7 @@ about features like switching the port, in case you've got a different service a
 
 __Victor__: Nikola, for superior documentation.
 
-### Deploying to a GitHub as a remote
+### Deploying to a GitHub
 
 GitHub pages is a cheap, reliable way to host a static site.
 
