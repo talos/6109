@@ -3,16 +3,10 @@ language: python
 python:
   - 2.7
 
-before_install:
-  - pip install -r requirements.txt
-
 script:
   # We have to do the because nikola's builtin `github_deploy` is broken
   # (https://github.com/getnikola/nikola/issues/1464).
-  - git checkout --orphan gh-pages
-  - git rm -rf *
-  - git commit --allow-empty -m 'empty commit'
-  - git push origin gh-pages:gh-pages
+  - git fetch origin gh-pages:gh-pages
   - nikola github_deploy
 
 cache: true
