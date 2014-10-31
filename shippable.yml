@@ -8,7 +8,7 @@ script:
   # (https://github.com/getnikola/nikola/issues/1464).
   - git remote set-url origin git@github.com:talos/6109.git
   - git branch -D gh-pages || echo "No existing gh-pages"
-  - git fetch origin gh-pages:gh-pages
+  - git fetch -f origin gh-pages:gh-pages
   - nikola github_deploy
 
 cache: true
