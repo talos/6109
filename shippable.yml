@@ -1,3 +1,5 @@
+build_image: thegovlab/nikola
+
 language: python
 
 python:
