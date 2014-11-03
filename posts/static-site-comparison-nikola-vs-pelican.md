@@ -2,7 +2,7 @@
 .. title: Static Site Comparison: Nikola vs Pelican
 .. slug: static-site-comparison-nikola-vs-pelican
 .. date: 2014-10-30 13:47:05 UTC-05:00
-.. tags: 
+.. tags: blogging
 .. link: 
 .. description: 
 .. type: text
@@ -294,3 +294,5 @@ messages in Nikola.  The broken `github_deploy` is a major problem, but only
 needs to be addressed once when you set up a site.
 
 [Nikola](http://www.getnikola.com)!
+
+Really, remove this!
