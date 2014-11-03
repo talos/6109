@@ -11,6 +11,8 @@ script:
   - git remote set-url origin git@github.com:GovLab/6109.git
   - git branch -D gh-pages || echo "No existing gh-pages"
   - git fetch -f origin gh-pages:gh-pages
+  - git config user.email "build@thegovlab.org"
+  - git config user.name "govlab buildbot"
   - nikola github_deploy
 
 cache: true
