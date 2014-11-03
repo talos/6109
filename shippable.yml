@@ -14,5 +14,3 @@ script:
   - git branch -D gh-pages || echo "No existing gh-pages"
   - git fetch -f origin gh-pages:gh-pages || git checkout --orphan gh-pages && rm -rf * && git rm -f * && git commit --allow-empty -m 'first commit' && git push origin gh-pages && git checkout -f $BRANCH
   - nikola github_deploy
-
-cache: true
