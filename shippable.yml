@@ -13,4 +13,4 @@ script:
   - $(test $BRANCH == master) && git remote set-url origin git@github.com:GovLab/6109.git || git remote set-url origin git@github.com:GovLab/6109.draft.git
   - git branch -D gh-pages || echo "No existing gh-pages"
   - git fetch -f origin gh-pages:gh-pages || git checkout --orphan gh-pages && git rm --cached $(git ls-files) && git commit --allow-empty -m 'first commit' && git push origin gh-pages && git checkout -f $BRANCH
-  - nikola github_deploy
+  - GITHUB_SOURCE_BRANCH=$BRANCH nikola github_deploy
