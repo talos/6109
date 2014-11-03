@@ -8,7 +8,7 @@ python:
 script:
   # We have to do the because nikola's builtin `github_deploy` is broken
   # (https://github.com/getnikola/nikola/issues/1464).
-  - git remote set-url origin git@github.com:GovLab/6109.git
+  - $(test $BRANCH == master) && git remote set-url origin git@github.com:GovLab/6109.git || git remote set-url origin git@github.com:GovLab/6109.draft.git
   - git branch -D gh-pages || echo "No existing gh-pages"
   - git fetch -f origin gh-pages:gh-pages
   - git config user.email "build@thegovlab.org"
