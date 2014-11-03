@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 import time
+import os
 
 # !! This is the configuration of Nikola. !! #
 # !!  You should edit it to your liking.  !! #
@@ -795,3 +796,5 @@ LOGGING_HANDLERS = {
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
+
+GITHUB_SOURCE_BRANCH = os.environ.get('BRANCH', 'master')

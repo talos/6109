@@ -14,7 +14,4 @@ script:
   - git branch -D gh-pages || echo "No existing gh-pages"
   - git fetch -f origin gh-pages:gh-pages || git checkout --orphan gh-pages && git rm --cached $(git ls-files) && git commit --allow-empty -m 'first commit' && git push origin gh-pages && git checkout -f $BRANCH
 
-  # Nikola reads the source branch from a config file, which we have to edit
-  # in place as it can't be overriden from env...
-  - echo "GITHUB_SOURCE_BRANCH = '$BRANCH'" > conf.py
   - nikola github_deploy
