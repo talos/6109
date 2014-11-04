@@ -12,7 +12,7 @@ script:
   - git config user.name "govlab buildbot"
   - $(test $BRANCH == master) && git remote set-url origin git@github.com:GovLab/6109.git || git remote set-url origin git@github.com:GovLab/6109.draft.git
   - git branch -D gh-pages || echo "No existing gh-pages"
-  - git fetch -f origin gh-pages:gh-pages || git checkout --orphan gh-pages && git rm --cached $(git ls-files) && git commit --allow-empty -m 'first commit' && git push origin gh-pages && git checkout $BRANCH
+  - git fetch -f origin gh-pages:gh-pages || (git checkout --orphan gh-pages && git rm --cached $(git ls-files) && git commit --allow-empty -m 'first commit' && git push origin gh-pages && git checkout $BRANCH)
   - git status --porcelain
   - git checkout --
   - git status --porcelain
