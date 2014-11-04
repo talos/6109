@@ -16,5 +16,6 @@ script:
   - git status --porcelain
   - git checkout --
   - git status --porcelain
+  - git status
   - nikola github_deploy
   
