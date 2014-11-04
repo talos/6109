@@ -797,4 +797,4 @@ LOGGING_HANDLERS = {
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
 
-#GITHUB_SOURCE_BRANCH = os.environ.get('BRANCH', 'master')
+GITHUB_SOURCE_BRANCH = os.environ.get('BRANCH', 'master')
