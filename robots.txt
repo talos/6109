@@ -1,2 +1,2 @@
-Sitemap: http://6109.thegovlab.org/sitemapindex.xml
+Sitemap: http://govlab.github.io/6109/sitemapindex.xml
 
