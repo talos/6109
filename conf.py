@@ -20,9 +20,16 @@ import os
 # Data about this site
 BLOG_AUTHOR = "GovLab Geeks"  # (translatable)
 BLOG_TITLE = "6109"  # (translatable)
+
+GITHUB_SOURCE_BRANCH = os.environ.get('BRANCH', 'master')
+
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://6109.thegovlab.org/"
+if GITHUB_SOURCE_BRANCH == 'master':
+    SITE_URL = "http://govlab.github.io/6109/"
+else:
+    SITE_URL = "http://govlab.github.io/6109.draft/"
+
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://6109.thegovlab.org/"
@@ -797,4 +804,3 @@ LOGGING_HANDLERS = {
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
 
-GITHUB_SOURCE_BRANCH = os.environ.get('BRANCH', 'master')
