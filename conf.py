@@ -28,7 +28,7 @@ GITHUB_SOURCE_BRANCH = os.environ.get('BRANCH', 'master')
 if GITHUB_SOURCE_BRANCH == 'master':
     SITE_URL = "http://govlab.github.io/6109/"
 else:
-    SITE_URL = "http://govlab.github.io/6109.draft/"
+    SITE_URL = "http://govlab.github.io/6109.{}/".format(GITHUB_SOURCE_BRANCH)
 
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
