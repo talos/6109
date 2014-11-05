@@ -295,4 +295,3 @@ needs to be addressed once when you set up a site.
 
 [Nikola](http://www.getnikola.com)!
 
-example change
