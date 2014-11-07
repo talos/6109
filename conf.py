@@ -497,7 +497,7 @@ COMMENT_SYSTEM = "muut"
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = "FsJkj1COiS"
+COMMENT_SYSTEM_ID = "govlab"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
