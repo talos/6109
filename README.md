@@ -54,3 +54,17 @@ build the [main site]() and your glorious work will be visible to the world!
 
   [Open a pull request]: https://github.com/GovLab/6109/pulls
   [main site]: https://govlab.github.io/6109/
+
+## Commenting
+
+We use [muut](http://muut.com) for our comments.
+
+## Images
+
+It's best to add images by uploading them somewhere else (for example, by
+posting them into a GitHub comment and copying the URL), then pasting in the
+absolute link using Markdown style.
+
+```
+![Alt text](https://absolute/path/to/img.jpg)
+```
