@@ -2,9 +2,11 @@
 
 6109 is the blOg (see it?) for the Govlab's geeks and wizards...
 
-6109 is an experiment itself.  We're trying a static site generator, Nikola,
+6109 is an experiment itself.  We're trying a static site generator, [Nikola](),
 along with Github hosting and continuous integration to enable the
 collaborative generation of a static site.
+
+  [Nikola]: http://getnikola.com
 
 ## How it works
 
@@ -42,7 +44,7 @@ You can check progress and logs for the CI, called Shippable,
 [here](https://app.shippable.com/projects/5453a27844927f89db3e6eee).
 
 Once it builds successfully, you can preview your blog by going to
-https://govlab.github.io/6109.<your-branch>/ .  So, if you're John, your branch
+`https://govlab.github.io/6109.<your-branch>/`.  So, if you're John, your branch
 preview is visible at [https://govlab.github.io/6109.john/]().
 
 At that point, you'll want comments and feedback!  [Open a pull request]() for
