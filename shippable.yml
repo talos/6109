@@ -1,4 +1,4 @@
-build_image: thegovlab/nikola
+build_image: thegovlab/6109
 
 language: python
 

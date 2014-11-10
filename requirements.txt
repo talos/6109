@@ -1,2 +1,4 @@
-Nikola==7.1.0
+git+https://github.com/govlab/nikola.git@d20b42aafa845ae4e1393f475e5bb86870c332b0#egg=common
 Markdown==2.5.1
+Jinja2==2.7.3
+webassets
