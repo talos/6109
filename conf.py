@@ -809,3 +809,4 @@ LOGGING_HANDLERS = {
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
 
+INFER_MISSING_DATE = True
