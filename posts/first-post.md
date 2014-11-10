@@ -16,8 +16,13 @@ To fulfill this mission, the product & engineering team (that's Arnaud, John and
 * special projects
 
 As our name suggests, we are in the business of experimentation.
-The digital artefacts we build should be optimized for change.
-It is unlikely we will get them perfect the first time. And we are perfectly happy when our users take the artifacts and bring them to the next stage.
+* The digital artefacts we build will be **open source**.
+* The digital artefacts we build we be **optimized for change**.
+
+It is unlikely we will get them perfect the first time. We will try to be very transparent about the creation by releasing early and often. And we are perfectly happy when our users take the artifacts and bring them to the next stage.
 
 So what should you expect on this blog?
+* some tales about our product and engineering adventures, e.g. hackathon, internal projects
+* some info about technologies we have been playing with
+* pointers to cool articles and papers
 
