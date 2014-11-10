@@ -24,15 +24,17 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="GovLab Geeks">
-        <meta name="og:title" content="Static Site Comparison: Nikola vs Pelican">
-    <meta name="og:url" content="http://govlab.github.io/6109/posts/static-site-comparison-nikola-vs-pelican.html">
-    <meta name="og:description" content="GovLab Static Python Static Site Generator Smackkdown
+        <meta property="og:site_name" content="6109">
+    <meta property="og:title" content="Static Site Comparison: Nikola vs Pelican">
+    <meta property="og:url" content="http://govlab.github.io/6109/posts/static-site-comparison-nikola-vs-pelican.html">
+    <meta property="og:description" content="GovLab Static Python Static Site Generator Smackkdown
 In the red corner: Pelican
 In the blue corner: Nikola
 Here's a list of their shared attractive attributes, which is why they were put
 in competiti">
-    <meta name="og:site_name" content="6109">
-    <meta name="og:type" content="article">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2014-11-05T07:21:29-05:00">
+           <meta property="article:tag" content="blogging">
 
     
     
@@ -99,7 +101,7 @@ in competiti">
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">GovLab Geeks</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-10-30T13:47:05-05:00" itemprop="datePublished" title="Publication date">2014-10-30 13:47</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-11-05T07:21:29-05:00" itemprop="datePublished" title="Publication date">2014-11-05 07:21</time></a></p>
                 <p class="commentline">        
 
         </p>
@@ -154,35 +156,35 @@ instead of <code>pelican-quickstart</code>, Pelican will assume you want to rege
 your current folder and create a bunch of junk (whether or not there's
 a pelican project there.  Its error messages don't suggest you need to run
 <code>pelican-quickstart</code>; you have to look at docs online to find that out.</p>
-<pre class="code literal-block"><span class="err">$</span> <span class="n">pelican</span>
-<span class="nl">WARNING:</span> <span class="n">Feeds</span> <span class="n">generated</span> <span class="n">without</span> <span class="n">SITEURL</span> <span class="n">set</span> <span class="n">properly</span> <span class="n">may</span> <span class="n">not</span> <span class="n">be</span> <span class="n">valid</span>
-<span class="nl">WARNING:</span> <span class="n">No</span> <span class="n">timezone</span> <span class="n">information</span> <span class="n">specified</span> <span class="n">in</span> <span class="n">the</span> <span class="n">settings</span><span class="p">.</span> <span class="n">Assuming</span> <span class="n">your</span>
-<span class="n">timezone</span> <span class="n">is</span> <span class="n">UTC</span> <span class="k">for</span> <span class="n">feed</span> <span class="n">generation</span><span class="p">.</span> <span class="n">Check</span>
-<span class="nl">http:</span><span class="c1">//docs.getpelican.com/en/latest/settings.html#timezone for more</span>
-<span class="n">information</span>
-<span class="nl">ERROR:</span> <span class="n">Skipping</span> <span class="n">posts</span><span class="o">/</span><span class="n">data</span><span class="o">-</span><span class="n">ruled</span><span class="o">-</span><span class="n">irrelevant</span><span class="p">.</span><span class="n">rst</span><span class="o">:</span> <span class="n">could</span> <span class="n">not</span> <span class="n">find</span> <span class="n">information</span>
-<span class="n">about</span> <span class="err">'</span><span class="n">date</span><span class="err">'</span>
-<span class="nl">Done:</span> <span class="n">Processed</span> <span class="mi">0</span> <span class="n">article</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="mi">0</span> <span class="n">draft</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">and</span> <span class="mi">0</span> <span class="n">page</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">in</span> <span class="mf">0.19</span> <span class="n">seconds</span><span class="p">.</span>
+<pre class="code literal-block"><span class="nv">$ </span>pelican
+WARNING: Feeds generated without SITEURL <span class="nb">set </span>properly may not be valid
+WARNING: No timezone information specified in the settings. Assuming your
+timezone is UTC <span class="k">for</span> feed generation. Check
+http://docs.getpelican.com/en/latest/settings.html#timezone <span class="k">for</span> more
+information
+ERROR: Skipping posts/data-ruled-irrelevant.rst: could not find information
+about <span class="s1">'date'</span>
+Done: Processed <span class="m">0</span> article<span class="o">(</span>s<span class="o">)</span>, <span class="m">0</span> draft<span class="o">(</span>s<span class="o">)</span> and <span class="m">0</span> page<span class="o">(</span>s<span class="o">)</span> in 0.19 seconds.
 </pre>
 
 
 <p>With Nikola, simply executing <code>nikola</code> will give you a helpful listing of the
 possible commands, including the relevant <code>init</code> command:</p>
-<pre class="code literal-block"><span class="err">$</span> <span class="n">nikola</span>
-<span class="p">[</span><span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span><span class="n">T21</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mi">38</span><span class="n">Z</span><span class="p">]</span> <span class="n">WARNING</span><span class="o">:</span> <span class="n">Nikola</span><span class="o">:</span> <span class="n">In</span> <span class="n">order</span> <span class="n">to</span> <span class="n">USE_BUNDLES</span><span class="p">,</span> <span class="n">you</span> <span class="n">must</span>
-<span class="n">install</span> <span class="n">the</span> <span class="s">"webassets"</span> <span class="n">Python</span> <span class="n">package</span><span class="p">.</span>
-<span class="p">[</span><span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span><span class="n">T21</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span><span class="mi">38</span><span class="n">Z</span><span class="p">]</span> <span class="n">WARNING</span><span class="o">:</span> <span class="n">Nikola</span><span class="o">:</span> <span class="n">Setting</span> <span class="n">USE_BUNDLES</span> <span class="n">to</span> <span class="n">False</span><span class="p">.</span>
-<span class="n">Nikola</span> <span class="n">is</span> <span class="n">a</span> <span class="n">tool</span> <span class="n">to</span> <span class="n">create</span> <span class="k">static</span> <span class="n">websites</span> <span class="n">and</span> <span class="n">blogs</span><span class="p">.</span> <span class="n">For</span> <span class="n">full</span> <span class="n">documentation</span>
-<span class="n">and</span> <span class="n">more</span> <span class="n">information</span><span class="p">,</span> <span class="n">please</span> <span class="n">visit</span> <span class="n">http</span><span class="o">:</span><span class="c1">//getnikola.com/</span>
+<pre class="code literal-block"><span class="nv">$ </span>nikola
+<span class="o">[</span>2014-10-29T21:13:38Z<span class="o">]</span> WARNING: Nikola: In order to USE_BUNDLES, you must
+install the <span class="s2">"webassets"</span> Python package.
+<span class="o">[</span>2014-10-29T21:13:38Z<span class="o">]</span> WARNING: Nikola: Setting USE_BUNDLES to False.
+Nikola is a tool to create static websites and blogs. For full documentation
+and more information, please visit http://getnikola.com/
 
 
-<span class="n">Available</span> <span class="n">commands</span><span class="o">:</span>
-  <span class="n">nikola</span> <span class="k">auto</span>                 <span class="n">automatically</span> <span class="n">detect</span> <span class="n">site</span> <span class="n">changes</span><span class="p">,</span> <span class="n">rebuild</span> <span class="n">and</span>
-<span class="n">optionally</span> <span class="n">refresh</span> <span class="n">a</span> <span class="n">browser</span>
-  <span class="n">nikola</span> <span class="n">bootswatch_theme</span>     <span class="n">given</span> <span class="n">a</span> <span class="n">swatch</span> <span class="n">name</span> <span class="n">from</span> <span class="n">bootswatch</span><span class="p">.</span><span class="n">com</span> <span class="n">and</span>
-<span class="n">a</span> <span class="n">parent</span> <span class="n">theme</span><span class="p">,</span> <span class="n">creates</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">theme</span>
-  <span class="n">nikola</span> <span class="n">build</span>                <span class="n">run</span> <span class="n">tasks</span>
-<span class="p">...</span>
+Available commands:
+  nikola auto                 automatically detect site changes, rebuild and
+optionally refresh a browser
+  nikola bootswatch_theme     given a swatch name from bootswatch.com and
+a parent theme, creates a custom theme
+  nikola build                run tasks
+...
 </pre>
 
 
@@ -190,11 +192,11 @@ possible commands, including the relevant <code>init</code> command:</p>
 <h4>Creating your first blog post</h4>
 <p>All new posts follow roughly the same format in Pelican.  According to the
 <a href="http://docs.getpelican.com/en/3.4.0/quickstart.html#installation">quickstart guide</a> this means duplicating a template post of this format:</p>
-<pre class="code literal-block"><span class="nl">Title:</span> <span class="p">(</span><span class="n">title</span><span class="p">)</span>
-<span class="nl">Date:</span> <span class="p">(</span><span class="n">date</span><span class="p">)</span>
-<span class="nl">Category:</span> <span class="p">(</span><span class="n">list</span> <span class="n">of</span> <span class="n">categories</span><span class="p">)</span>
+<pre class="code literal-block">Title: (title)
+Date: (date)
+Category: (list of categories)
 
-<span class="p">(</span><span class="n">Content</span> <span class="n">goes</span> <span class="n">here</span><span class="p">.)</span>
+(Content goes here.)
 </pre>
 
 
@@ -222,16 +224,16 @@ need to use a special switch to use Markdown instead.  Unfortunately, the naive<
 
 <p>The trick is to edit <code>conf.py</code> to insert a line translating <code>.md</code> formats for
 both <code>POSTS</code> and <code>PAGES</code>:</p>
-<pre class="code literal-block"><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s">"posts/*.rst"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"posts/*.txt"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"posts/*.md"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s">"stories/*.rst"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"stories/*.txt"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"stories/*.md"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
+<pre class="code literal-block">POSTS = (
+    ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.md", "posts", "post.tmpl"),
+)
+PAGES = (
+    ("stories/*.rst", "stories", "story.tmpl"),
+    ("stories/*.txt", "stories", "story.tmpl"),
+    ("stories/*.md", "stories", "story.tmpl"),
+)
 </pre>
 
 
@@ -295,11 +297,11 @@ you've already created a blank <code>gh-pages</code> branch and pushed it to Git
 <p>This means you have to do this yourself, which can be dangerous -- make sure
 you've committed everything on <code>master</code> and no untracked files are hanging out
 before doing this!</p>
-<pre class="code literal-block"><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-<span class="n">git</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="p">.</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">empty</span> <span class="o">-</span><span class="n">m</span> <span class="err">'</span><span class="n">first</span> <span class="n">commit</span><span class="err">'</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="o">:</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<pre class="code literal-block">git checkout --orphan gh-pages
+git rm -rf .
+git commit --allow-empty -m 'first commit'
+git push origin gh-pages:gh-pages
+git checkout master
 </pre>
 
 
