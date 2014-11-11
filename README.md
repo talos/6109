@@ -68,3 +68,11 @@ absolute link using Markdown style.
 ```
 ![Alt text](https://absolute/path/to/img.jpg)
 ```
+
+## Teasers
+
+If you only want part of your post showed on the homepage (which is probably a
+good idea if it's more than a few paragraphs), then insert the following code
+in your Markdown where you want the breakpoint:
+
+`<!-- TEASER_END -->`
