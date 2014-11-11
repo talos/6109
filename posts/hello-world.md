@@ -10,7 +10,7 @@
 
 The mission of [GovLab](http://thegovlab.org) is to improve people's lives by improving the way we make decisions.
 
-To fulfill this mission, the product & engineering team (that's Arnaud, John and Luis for now) works along three axes:
+To fulfill this mission, the product & engineering team (that's [Arnaud](https://github.com/sahuguet), [John](https://github.com/talos) and [Luis](https://github.com/luisdaniel) for now) works along three axes:
 
 * Internal tools for us (but also others to use) with a focus on knowledge management, online education and data science & visualization.
 
