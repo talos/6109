@@ -12,9 +12,6 @@ The mission of [GovLab](http://thegovlab.org) is to improve people's lives by im
 
 To fulfill this mission, the product & engineering team (that's [Arnaud](https://github.com/sahuguet), [John](https://github.com/talos) and [Luis](https://github.com/luisdaniel) for now) works along three axes:
 
-
-<!-- TEASER_END -->
-
 * Internal tools for us (but also others to use) with a focus on knowledge management, online education and data science & visualization.
 
 * Foundation tools to empower civic innovators with their work, for example an annotation framework, data gathering, expert network tools.
@@ -22,6 +19,8 @@ To fulfill this mission, the product & engineering team (that's [Arnaud](https:/
 * Special one-off projects that are related to governance and technology, including testifying about open data policy, providing search mechanisms for the deep Internet of government documents, and more.
 
 As our name suggests, we are in the business of experimentation.
+
+<!-- TEASER_END -->
 
 * The digital artifacts we build will be **free and open source**. We believe in open code.
 
