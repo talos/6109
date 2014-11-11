@@ -425,10 +425,9 @@ REDIRECTIONS = []
 # FAVICONS contains (name, file, size) tuples.
 # Used for create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = {
-#     ("icon", "/favicon.ico", "16x16"),
-#     ("icon", "/icon_128x128.png", "128x128"),
-# }
+FAVICONS = {
+    ("icon", "/favicon.png", "16x16"),
+}
 
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
