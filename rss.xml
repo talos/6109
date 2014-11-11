@@ -1,3 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>6109</title><link>http://govlab.github.io/6109/</link><description>GovLab 6109</description><atom:link href="http://govlab.github.io/6109/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 11 Nov 2014 17:42:55 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title> This is a post without metadata</title><link>http://govlab.github.io/6109/posts/nometa-post.html</link><dc:creator>GovLab Geeks</dc:creator><description>&lt;div&gt;&lt;p&gt;Will it build?&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>6109</title><link>http://govlab.github.io/6109/</link><description>GovLab 6109</description><atom:link href="http://govlab.github.io/6109/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 11 Nov 2014 18:15:39 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hello World!</title><link>http://govlab.github.io/6109/posts/hello-world.html</link><dc:creator>GovLab Geeks</dc:creator><description>&lt;div&gt;&lt;p&gt;The mission of &lt;a href="http://thegovlab.org"&gt;GovLab&lt;/a&gt; is to improve people's lives by improving the way we make decisions.&lt;/p&gt;
+&lt;p&gt;To fulfill this mission, the product &amp;amp; engineering team (that's &lt;a href="https://github.com/sahuguet"&gt;Arnaud&lt;/a&gt;, &lt;a href="https://github.com/talos"&gt;John&lt;/a&gt; and &lt;a href="https://github.com/luisdaniel"&gt;Luis&lt;/a&gt; for now) works along three axes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Internal tools for us (but also others to use) with a focus on knowledge management, online education and data science &amp;amp; visualization.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Foundation tools to empower civic innovators with their work, for example an annotation framework, data gathering, expert network tools.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Special one-off projects that are related to governance and technology, including testifying about open data policy, providing search mechanisms for the deep Internet of government documents, and more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As our name suggests, we are in the business of experimentation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The digital artifacts we build will be &lt;strong&gt;free and open source&lt;/strong&gt;. We believe in open code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The digital artifacts we build we be &lt;strong&gt;optimized for change&lt;/strong&gt;. We believe what we produce should be easy to use and modify.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We don't expect perfection the first time. We will be transparent, releasing early and often.&lt;/p&gt;
+&lt;p&gt;What should you expect on this blog?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Tales about our product and engineering adventures.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Info about technologies we have been playing with.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pointers to cool articles and papers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://govlab.github.io/6109/posts/hello-world.html</guid><pubDate>Tue, 11 Nov 2014 13:13:22 GMT</pubDate></item><item><title> This is a post without metadata</title><link>http://govlab.github.io/6109/posts/nometa-post.html</link><dc:creator>GovLab Geeks</dc:creator><description>&lt;div&gt;&lt;p&gt;Will it build?&lt;/p&gt;
 &lt;p&gt;Will it blend?&lt;/p&gt;&lt;/div&gt;</description><guid>http://govlab.github.io/6109/posts/nometa-post.html</guid><pubDate>Mon, 10 Nov 2014 16:03:40 GMT</pubDate></item></channel></rss>
