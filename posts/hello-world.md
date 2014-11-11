@@ -20,6 +20,8 @@ To fulfill this mission, the product & engineering team (that's [Arnaud](https:/
 
 As our name suggests, we are in the business of experimentation.
 
+<!-- TEASER_END -->
+
 * The digital artifacts we build will be **free and open source**. We believe in open code.
 
 * The digital artifacts we build we be **optimized for change**. We believe what we produce should be easy to use and modify.
