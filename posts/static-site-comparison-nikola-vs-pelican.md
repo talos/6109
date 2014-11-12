@@ -1,7 +1,7 @@
 <!-- 
 .. title: Static Site Comparison: Nikola vs Pelican
 .. slug: static-site-comparison-nikola-vs-pelican
-.. date: 2014-11-12 16:00:05 UTC-05:00
+.. date: 2014-11-12 13:00:05 UTC-05:00
 .. tags: blogging
 .. link: 
 .. description: 
@@ -10,9 +10,23 @@
 
 ## GovLab Static Python Static Site Generator Smackkdown
 
-For the govlab geeks shiny new blog, we decided to go with a static site
+For the Govlab geeks' shiny new blog, we decided to go with a static site
 generator.  Compared to traditional blog installations, these generators are
-lightweight, secure, reliable, and portable.
+lightweight, secure, reliable, and portable.  Using Github pages, you can host
+your website for free and enjoy all the benefits of revision control -- every
+change and addition is tracked and reversable.  The new [healthcare.gov] has
+brought some deserved publicity to static site generators as a way to avoid
+bloat.  Meanwhile, Drupal, one of the most popular traditional content
+management systems, has been rocked by the [exposure of serious
+vulnerabilities].
+
+  [healthcare.gov]: http://www.hhs.gov/digitalstrategy/blog/2013/04/new-heathcare-open-cms-free.html
+  [exposure of serious vulnerabilities]: https://www.drupal.org/PSA-2014-003
+
+Following the very popular [jekyll](http://jekyllrb.com/)'s lead, there are
+many options for static site generators who do their processing in Ruby.  The
+Govlab geeks would prefer to keep their code in Python when possible, which
+left two well-maintained options on the table.
 
 In the red corner: [Pelican](http://blog.getpelican.com/)
 
