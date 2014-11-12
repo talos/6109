@@ -1,7 +1,7 @@
 <!-- 
 .. title: Static Site Comparison: Nikola vs Pelican
 .. slug: static-site-comparison-nikola-vs-pelican
-.. date: 2014-11-12 15:00:05 UTC-05:00
+.. date: 2014-11-12 16:00:05 UTC-05:00
 .. tags: blogging
 .. link: 
 .. description: 
@@ -10,9 +10,15 @@
 
 ## GovLab Static Python Static Site Generator Smackkdown
 
+For the govlab geeks shiny new blog, we decided to go with a static site
+generator.  Compared to traditional blog installations, these generators are
+lightweight, secure, reliable, and portable.
+
 In the red corner: [Pelican](http://blog.getpelican.com/)
 
 In the blue corner: [Nikola](http://www.getnikola.com)
+
+<!-- TEASER_END -->
 
 Here's a list of their shared attractive attributes, which is why they were put
 in competition:
