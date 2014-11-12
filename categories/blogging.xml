@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>6109 (blogging)</title><link>http://govlab.github.io/6109/</link><description></description><atom:link href="http://govlab.github.io/6109/categories/blogging.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 12 Nov 2014 20:29:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Static Site Comparison: Nikola vs Pelican</title><link>http://govlab.github.io/6109/posts/static-site-comparison-nikola-vs-pelican.html</link><dc:creator>GovLab Geeks</dc:creator><description>&lt;div&gt;&lt;h3&gt;GovLab Static Python Static Site Generator Smackkdown&lt;/h3&gt;
+&lt;p&gt;For the Govlab geeks' shiny new blog, we decided to go with a static site
+generator.  Compared to traditional blog installations, these generators are
+lightweight, secure, reliable, and portable.  Using Github pages, you can host
+your website for free and enjoy all the benefits of revision control -- every
+change and addition is tracked and reversable.  The new &lt;a href="http://www.hhs.gov/digitalstrategy/blog/2013/04/new-heathcare-open-cms-free.html"&gt;healthcare.gov&lt;/a&gt; has
+brought some deserved publicity to static site generators as a way to avoid
+bloat.  Meanwhile, Drupal, one of the most popular traditional content
+management systems, has been rocked by the &lt;a href="https://www.drupal.org/PSA-2014-003"&gt;exposure of serious
+vulnerabilities&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Following the very popular &lt;a href="http://jekyllrb.com/"&gt;jekyll&lt;/a&gt;'s lead, there are
+many options for static site generators who do their processing in Ruby.  The
+Govlab geeks would prefer to keep their code in Python when possible, which
+left two well-maintained options on the table.&lt;/p&gt;
+&lt;p&gt;In the red corner: &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the blue corner: &lt;a href="http://www.getnikola.com"&gt;Nikola&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://govlab.github.io/6109/posts/static-site-comparison-nikola-vs-pelican.html"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>blogging</category><guid>http://govlab.github.io/6109/posts/static-site-comparison-nikola-vs-pelican.html</guid><pubDate>Wed, 12 Nov 2014 15:21:03 GMT</pubDate></item></channel></rss>

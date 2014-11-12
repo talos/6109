@@ -5,6 +5,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>http://govlab.github.io/6109/categories/blogging.xml</loc>
+  <lastmod>2014-11-12</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://govlab.github.io/6109/rss.xml</loc>
   <lastmod>2014-11-12</lastmod>
  </sitemap>
