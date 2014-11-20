@@ -11,6 +11,7 @@ The workflow of a static site for a non-technical person is actually pretty diff
 * Individual user accounts & authentication, allowing everyone to have their own drafts/works in progress before live deployment
 * In-browser editing
 * Easy generation of metadata
+* Immediate preview of how your post will look in the site
 
 As much as I'd love it if everyone learned git and a solid local text editor, this ain't gonna happen -- especially when there are so many ways to avoid doing that and still publish a blog ([hello?](http://tumblr.com/)).
 
@@ -20,8 +21,20 @@ As an added advantage, pushes to production naturally map to the pull request sy
 
 Metadata generation (the addition of timestamps for the post, the author's name, and tags) is tricky, since we can't customize the interface Github provides.  However, if we go with a static site builder that we have control over, we can fork the code and modify it as we wish to spare the end-user automatable annotation.
 
+An immmediate preview of how the post looks can be difficult -- the build process for a static site only takes a few seconds, but you need a server somewhere with the static site generator itself already installed.  Installing one from scratch, even programmatically, could take a minute.  This would be unacceptably slow.  However, with clever use of caching and/or containers, it should be possible to isolate the build to "just the build" and not the requirements -- and that's only takes a few seconds.
+
 ## Actually building it
 
 So we've got a neat idea, and it seems like it should be possible.  How can it really be done?
 
-While Github provides a built-in static site deployment through [Jekyll](http://jekyllrb.com), we wanted to be able to fully customize the code that builds our site.  This means that we also have to supply our own continuous integration, which can pick up on changes to the code and rebuild the site.  We can still take advantage of Github's free hosting by pushing to a `gh-pages` branch.
+While Github provides a built-in static site deployment through [Jekyll](http://jekyllrb.com), we wanted to be able to fully customize the code that builds our site.  This means that we also have to supply our own continuous integration (CI), which can pick up on changes to the code and rebuild the site.  We can still take advantage of Github's free hosting by having our CI server push the built site to a `gh-pages` branch.
+
+I chose [Shippable](https://www.shippable.com/) for continuous integration, although YMMV.  Whichever CI you choose, make sure that it's possible to cache the app that's building the static pages.  For us, that meant creating a special [Docker container](https://registry.hub.docker.com/u/thegovlab/6109/) and using it as the base for all of our Shippable builds.  This turned the 30-40 second lag from building all the requirements for Nikola before building the site into just 1-2 seconds to grab the Docker container and 1-2 seconds to build the site.  Shippable is quite cheap, but you'll need to supply your own box to do the actual build -- if you've got a spare VPS or EC2 instance capable of running Docker, that will do fine.
+
+Next up is providing everyone a copy of the site that they can work on, and their own preview of their work.  While this would seem to be a natural use of Github's fork feature, this doesn't work because their forked version couldn't be accessed by the CI without mucking about with their settings and keys.  Ugly.  Github also doesn't allow you to fork your own repo.  Even if you fake this process by creating a blank repo and pushing the existing code to that blank repo, the pull interface system won't recognize that the two repos are related.  What to do?
+
+1. Create a separate branch in the main repo for each user
+2. Create "fake forks" by creating blank repos named "<blog>.<user>"
+3. Have people edit their posts on their own branch, but when they commit, have the CI push their changes to `gh-pages` on their "fake fork"
+
+This allows each person to have a special preview url (for example, http://<project>.github.io/<blog>.<user>, if the main blog URL is https://<project>.github.io/<blog>) thanks to the "fake fork" that the CI pushes to.  However, they can still use the Github pull request system to request merges into `master` for the real blog deploy.  No one ever touches the "fake forks".
