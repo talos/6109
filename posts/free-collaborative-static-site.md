@@ -53,7 +53,7 @@ The workflow for a user looks like this:
 -->
 ![Workflow](http://www.yuml.me/c7f52c99)
 
-The deploy process looks like this:
+For three users, the deploy process looks like this:
 
 <!--
 [https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[james|BRANCH{bg:thistle}]
@@ -78,3 +78,18 @@ The deploy process looks like this:
 [gh-pages  |BRANCH]-.->[https:⁄⁄org.github.io⁄blog.debbie|PREVIEW BLOG{bg:skyblue}]
 -->
 ![Deploy process](http://www.yuml.me/f0383a0e)
+
+Each user has their own branch on the main repo, in addition to a "fake fork" repository with its own `gh-pages` branch so they can preview their own work.
+
+Our `shippabe.yml` is [customized](https://github.com/GovLab/6109/blob/master/shippable.yml#L13) to push each special branch to the appropriate "fake fork" repo.
+
+`$(test $BRANCH == master) && git remote set-url origin git@github.com:GovLab/6109.git || git remote set-url origin git@github.com:GovLab/6109.$BRANCH.git`
+
+Our Nikola `conf.py` is [customized](https://github.com/GovLab/6109/blob/master/conf.py#L28) to provide the correct home URL for each user preview.
+
+```
+if GITHUB_SOURCE_BRANCH == 'master':
+SITE_URL = "http://govlab.github.io/6109/"
+else:
+SITE_URL = "http://govlab.github.io/6109.{}/".format(GITHUB_SOURCE_BRANCH)
+```
