@@ -86,7 +86,7 @@ Our [shippable.yml](https://github.com/GovLab/6109/blob/master/shippable.yml#L13
 $(test $BRANCH == master) \
   && git remote set-url origin git@github.com:GovLab/6109.git \
   || git remote set-url origin git@github.com:GovLab/6109.$BRANCH.git
-````
+```
 
 Our Nikola [conf.py](https://github.com/GovLab/6109/blob/master/conf.py#L28) provides the correct home URL for each user preview.  If the build is coming off `master`, it uses the production URL.  Otherwise, it uses the URL for the user's preview, which is also the name of the branch/user appended to the repo name.
 
