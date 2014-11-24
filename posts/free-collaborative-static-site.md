@@ -1,5 +1,5 @@
 <!--
-title: Deploy a collaborative blog on GitHub for free
+.. title: Deploy a collaborative blog on GitHub for free
 -->
 In the last post, I explained why we chose to go with the static site generator [Nikola](http://getnikola.com/) for the Govlab 6109.  I didn't talk about how we actually collaboratively build and deploy a static site, though.  So without further ado...
 
