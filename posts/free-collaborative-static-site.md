@@ -39,7 +39,7 @@ Next up is providing everyone a copy of the site that they can work on, and thei
 
 This allows each person to have a special preview url (for example, http://<project>.github.io/<blog>.<user>, if the main blog URL is https://<project>.github.io/<blog>) thanks to the "fake fork" that the CI pushes to.  However, they can still use the Github pull request system to request merges into `master` for the real blog deploy.  No one ever touches the "fake forks".
 
-The workflow looks like this:
+The workflow for a user looks like this:
 
 <!--
 [User creates post{bg:wheat}]-CI->[Deploys to personal preview{bg:steelblue}],
@@ -52,3 +52,29 @@ The workflow looks like this:
 [Edits{bg:wheat}]-CI->[Deploys to personal preview{bg:steelblue},
 -->
 ![Workflow](http://www.yuml.me/c7f52c99)
+
+The deploy process looks like this:
+
+<!--
+[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[james|BRANCH{bg:thistle}]
+[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[debbie|BRANCH{bg:thistle}]
+[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[sally|BRANCH{bg:thistle}]
+[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[master|BRANCH{bg:violet}]
+[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[gh-pages|BRANCH{bg:thistle}]
+[master|BRANCH]->[Continuous Integration|debbie|sally|master|james{bg:seagreen}]
+[sally|BRANCH]->[Continuous Integration{bg:seagreen}]
+[debbie|BRANCH]->[Continuous Integration{bg:seagreen}]
+[james|BRANCH]->[Continuous Integration{bg:seagreen}]
+[https:⁄⁄github.com⁄org⁄blog.sally|REPO (fake fork){bg:salmon}]-[gh-pages |BRANCH{bg:thistle}]
+[https:⁄⁄github.com⁄org⁄blog.debbie|REPO (fake fork){bg:salmon}]-[gh-pages  |BRANCH{bg:thistle}]
+[https:⁄⁄github.com⁄org⁄blog.james|REPO (fake fork){bg:salmon}]-[gh-pages   |BRANCH{bg:thistle}]
+[Continuous Integration]->[gh-pages|BRANCH]
+[Continuous Integration]->[gh-pages |BRANCH]
+[Continuous Integration]->[gh-pages  |BRANCH]
+[Continuous Integration]->[gh-pages   |BRANCH]
+[gh-pages   |BRANCH]-.->[https:⁄⁄org.github.io⁄blog.james|PREVIEW BLOG{bg:skyblue}]
+[gh-pages|BRANCH]-.->[https:⁄⁄org.github.io⁄blog|PRODUCTION BLOG{bg:steelblue}]
+[gh-pages |BRANCH]-.->[https:⁄⁄org.github.io⁄blog.sally|PREVIEW BLOG{bg:skyblue}]
+[gh-pages  |BRANCH]-.->[https:⁄⁄org.github.io⁄blog.debbie|PREVIEW BLOG{bg:skyblue}]
+-->
+![Deploy process](http://www.yuml.me/f0383a0e)
