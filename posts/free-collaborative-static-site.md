@@ -55,19 +55,18 @@ The workflow for a user looks like this:
 
 For three users, the deploy process looks like this:
 
-<!--
-[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[james|BRANCH{bg:thistle}]
-[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[debbie|BRANCH{bg:thistle}]
-[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[sally|BRANCH{bg:thistle}]
-[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[master|BRANCH{bg:violet}]
-[https:⁄⁄github.com⁄org⁄blog|REPO{bg:tomato}]-[gh-pages|BRANCH{bg:thistle}]
+<!--[blog|REPO{bg:tomato}]-[james|BRANCH{bg:thistle}]
+[blog|REPO{bg:tomato}]-[debbie|BRANCH{bg:thistle}]
+[blog|REPO{bg:tomato}]-[sally|BRANCH{bg:thistle}]
+[blog|REPO{bg:tomato}]-[master|BRANCH{bg:thistle}]
+[blog|REPO{bg:tomato}]-[gh-pages|BRANCH{bg:thistle}]
 [master|BRANCH]->[Continuous Integration|debbie|sally|master|james{bg:seagreen}]
 [sally|BRANCH]->[Continuous Integration{bg:seagreen}]
 [debbie|BRANCH]->[Continuous Integration{bg:seagreen}]
 [james|BRANCH]->[Continuous Integration{bg:seagreen}]
-[https:⁄⁄github.com⁄org⁄blog.sally|REPO (fake fork){bg:salmon}]-[gh-pages |BRANCH{bg:thistle}]
-[https:⁄⁄github.com⁄org⁄blog.debbie|REPO (fake fork){bg:salmon}]-[gh-pages  |BRANCH{bg:thistle}]
-[https:⁄⁄github.com⁄org⁄blog.james|REPO (fake fork){bg:salmon}]-[gh-pages   |BRANCH{bg:thistle}]
+[blog.sally|REPO (fake fork){bg:salmon}]-[gh-pages |BRANCH{bg:thistle}]
+[blog.debbie|REPO (fake fork){bg:salmon}]-[gh-pages  |BRANCH{bg:thistle}]
+[blog.james|REPO (fake fork){bg:salmon}]-[gh-pages   |BRANCH{bg:thistle}]
 [Continuous Integration]->[gh-pages|BRANCH]
 [Continuous Integration]->[gh-pages |BRANCH]
 [Continuous Integration]->[gh-pages  |BRANCH]
@@ -77,7 +76,7 @@ For three users, the deploy process looks like this:
 [gh-pages |BRANCH]-.->[https:⁄⁄org.github.io⁄blog.sally|PREVIEW BLOG{bg:skyblue}]
 [gh-pages  |BRANCH]-.->[https:⁄⁄org.github.io⁄blog.debbie|PREVIEW BLOG{bg:skyblue}]
 -->
-![Deploy process](http://www.yuml.me/f0383a0e)
+![Deploy process](http://www.yuml.me/70c89828)
 
 Each user has their own branch on the main repo, in addition to a "fake fork" repository with its own `gh-pages` branch so they can preview their own work.
 
