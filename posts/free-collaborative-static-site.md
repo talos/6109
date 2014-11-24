@@ -16,15 +16,9 @@ The workflow of a static site for a non-technical person is actually pretty diff
 * Easy generation of metadata
 * Immediate preview of how your post will look in the site
 
-As much as I'd love it if everyone learned git and a solid local text editor, this ain't gonna happen -- especially when there are so many ways to avoid doing that and still publish a blog ([hello?](http://tumblr.com/)).
+It's possible to get all these features, using a static site generator, and deploying for free on GitHub.  But how?
 
-Fortunately, GitHub provides quite respectable in-browser editing of Markdown, including previews, and can theoretically (through branches or forks) handle individual user accounts and authentication.
-
-As an added advantage, pushes to production naturally map to the pull request system, which means that the editing process is integral to deployment.
-
-Metadata generation (the addition of timestamps for the post, the author's name, and tags) is tricky, since we can't customize the interface Github provides.  However, if we go with a static site builder that we have control over, we can fork the code and modify it as we wish to spare the end-user automatable annotation.
-
-An immmediate preview of how the post looks can be difficult -- the build process for a static site only takes a few seconds, but you need a server somewhere with the static site generator itself already installed.  Installing one from scratch, even programmatically, could take a minute.  This would be unacceptably slow.  However, with clever use of caching and/or containers, it should be possible to isolate the build to "just the build" and not the requirements -- and that's only takes a few seconds.
+<!-- TEASER_END -->
 
 ## Actually building it
 
