@@ -84,7 +84,9 @@ Each user has their own branch on the main repo, in addition to a "fake fork" re
 Our [shippable.yml](https://github.com/GovLab/6109/blob/master/shippable.yml#L13) pushes each special branch to the appropriate "fake fork" repo.  When the CI builds, it checks to see which branch is being built.  If it's not master, it switches the remote to the "fake fork" by appending the name of the branch/user to the repo name.
 
 ```bash
-$(test $BRANCH == master) && git remote set-url origin git@github.com:GovLab/6109.git || git remote set-url origin git@github.com:GovLab/6109.$BRANCH.git
+$(test $BRANCH == master) \
+  && git remote set-url origin git@github.com:GovLab/6109.git \
+  || git remote set-url origin git@github.com:GovLab/6109.$BRANCH.git
 ````
 
 Our Nikola [conf.py](https://github.com/GovLab/6109/blob/master/conf.py#L28) provides the correct home URL for each user preview.  If the build is coming off `master`, it uses the production URL.  Otherwise, it uses the URL for the user's preview, which is also the name of the branch/user appended to the repo name.
