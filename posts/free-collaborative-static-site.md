@@ -38,3 +38,17 @@ Next up is providing everyone a copy of the site that they can work on, and thei
 3. Have people edit their posts on their own branch, but when they commit, have the CI push their changes to `gh-pages` on their "fake fork"
 
 This allows each person to have a special preview url (for example, http://<project>.github.io/<blog>.<user>, if the main blog URL is https://<project>.github.io/<blog>) thanks to the "fake fork" that the CI pushes to.  However, they can still use the Github pull request system to request merges into `master` for the real blog deploy.  No one ever touches the "fake forks".
+
+The workflow looks like this:
+
+<!--
+[User creates post{bg:wheat}]-CI->[Deploys to personal preview{bg:steelblue}],
+[User creates post{bg:wheat}]-User->[Edits{bg:wheat}],
+[Edits{bg:wheat}]-User->[Pull request{bg:wheat}],
+[Pull request{bg:wheat}]-Editor>[Comments{bg:violet}],
+[Pull request{bg:wheat}]-Editor->[Merges{bg:violet}],
+[Merges{bg:violet}]-CI>[Deploys to production{bg:steelblue}],
+[Comments{bg:violet}]-User->[Edits{bg:wheat}],
+[Edits{bg:wheat}]-CI->[Deploys to personal preview{bg:steelblue},
+-->
+![Workflow](http://www.yuml.me/c7f52c99)
